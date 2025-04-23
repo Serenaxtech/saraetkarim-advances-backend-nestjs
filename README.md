@@ -1,4 +1,4 @@
-# saraetkarim API
+# saraetkarim API NestJS
 
 # Project Setup:
 
