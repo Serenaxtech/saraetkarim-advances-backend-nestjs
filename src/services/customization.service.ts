@@ -31,7 +31,7 @@ export class CustomizationService {
 
   async createCustomization(customizationData: CreateCustomizationDto): Promise<Customization> {
     const customization = this.customizationRepository.create({
-      customization_Size: Math.floor(customizationData.size), // Ensure integer
+      customization_Size: Math.floor(customizationData.size),
       customization_Color: customizationData.color,
       product_ID: customizationData.product_ID,
     });
@@ -41,7 +41,7 @@ export class CustomizationService {
   async updateCustomization(id: number, customizationData: UpdateCustomizationDto): Promise<Customization> {
     const customization = await this.getCustomizationById(id);
     
-    customization.customization_Size = Math.floor(customizationData.size); // Ensure integer
+    customization.customization_Size = Math.floor(customizationData.size);
     customization.customization_Color = customizationData.color;
     customization.product_ID = customizationData.product_ID;
 

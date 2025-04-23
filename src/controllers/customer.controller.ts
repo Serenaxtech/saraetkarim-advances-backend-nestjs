@@ -14,7 +14,7 @@ export class CustomerController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(0)
   async getAllCustomers(@Request() req) {
-    console.log('User from request:', req.user); // Add this for debugging
+    console.log('User from request:', req.user);
     return this.customerService.getAllCustomers();
   }
 
@@ -56,11 +56,13 @@ export class CustomerController {
   @Roles(0, 1)
   async deleteCustomer(
     @Param('id') id: number,
-    @Body('customer_Password') password: string,
+    @Body('password') password: string,
     @Request() req,
+    @Res({ passthrough: true }) response: Response,
   ) {
     const targetId = req.user.role === 0 ? id : req.user.id;
-    await this.customerService.deleteCustomer(targetId, password);
+    console.log(password);
+    await this.customerService.deleteCustomer(targetId, password, response);
     return { message: 'Customer deleted successfully' };
   }
 

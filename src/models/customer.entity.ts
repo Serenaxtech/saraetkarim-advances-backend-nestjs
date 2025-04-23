@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Exclude } from 'class-transformer';
 import { Address } from './address.entity';
 import { Review } from './review.entity';
 import { Cart } from './cart.entity';
@@ -15,6 +16,7 @@ export class Customer {
   customer_Email: string;
 
   @Column()
+  @Exclude()
   customer_Password: string;
 
   @Column()

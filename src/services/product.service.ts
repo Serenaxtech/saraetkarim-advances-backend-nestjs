@@ -20,7 +20,7 @@ export class ProductService {
   async getAllProductsInStock(): Promise<Product[]> {
     return this.productRepository.find({
       where: { 
-        stock_quantity: MoreThan(0)  // Changed from boolean to number comparison
+        stock_quantity: MoreThan(0) 
       },
       relations: ['category', 'reviews'],
     });

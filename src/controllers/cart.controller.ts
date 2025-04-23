@@ -16,6 +16,20 @@ export class CartController {
     return this.cartService.getAllCarts();
   }
 
+  @Get('total')
+  @Roles(0, 1)
+  async calculateTotal(@Request() req) {
+    if (!req.user?.id || isNaN(req.user.id)) {
+      return {
+        success: false,
+        message: 'Invalid user credentials',
+        total: 0
+      };
+    }
+    const total = await this.cartService.calculateTotal(Number(req.user.id));
+    return { total };
+  }
+
   @Get(':id')
   @Roles(0, 1)
   async getCartById(@Param('id') id: number) {
@@ -55,11 +69,5 @@ export class CartController {
     return this.cartService.deleteCartItem(id, req.user.id);
   }
 
-  @Get('total')
-  @Roles(0, 1)
-  async calculateTotal(@Request() req) {
-    console.log(req.user.id);
-    const total = await this.cartService.calculateTotal(req.user.id);
-    return { total };
-  }
+
 }

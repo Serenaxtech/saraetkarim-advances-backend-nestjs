@@ -93,15 +93,12 @@ export class CartService {
   }
 
   async calculateTotal(customerId: number): Promise<number> {
+    if (isNaN(customerId) || customerId <= 0) {
+      throw new BadRequestException('Invalid customer ID');
+    }
+
     try {
-      console.log('Starting calculateTotal for customer:', customerId);
-
-      if (!customerId || isNaN(customerId)) {
-        console.log('Invalid customerID detected:', customerId);
-        throw new BadRequestException('Invalid customer ID');
-      }
-
-      const carts = await this.cartRepository.find({
+      const activeCarts = await this.cartRepository.find({
         where: { 
           customer_ID: customerId,
           status: 'active'
@@ -109,39 +106,20 @@ export class CartService {
         relations: ['product']
       });
 
-      console.log('Retrieved carts:', JSON.stringify(carts, null, 2));
-
-      if (!carts || carts.length === 0) {
-        console.log('No carts found for customer');
+      if (!activeCarts || activeCarts.length === 0) {
         return 0;
       }
 
-      const total = carts.reduce((sum, cart) => {
-        console.log('Processing cart item:', {
-          cartId: cart.cart_ID,
-          product: cart.product,
-          quantity: cart.quantity
-        });
-
-        if (!cart.product) {
-          console.log('No product found for cart item');
-          return sum;
-        }
-        
-        const price = Number(cart.product.product_Price) || 0;
+      const total = activeCarts.reduce((sum, cart) => {
+        if (!cart.product) return sum;
+        const itemPrice = Number(cart.product.product_Price) || 0;
         const quantity = Number(cart.quantity) || 0;
-        const itemTotal = price * quantity;
-        
-        console.log('Item calculation:', { price, quantity, itemTotal });
-        
-        return sum + itemTotal;
+        return sum + (itemPrice * quantity);
       }, 0);
 
-      console.log('Final total:', total);
       return Number(total.toFixed(2));
     } catch (error) {
-      console.error('Error in calculateTotal:', error);
-      throw new BadRequestException('Error calculating cart total');
+      throw new BadRequestException(`Error calculating cart total: ${error.message}`);
     }
   }
 }

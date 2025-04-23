@@ -5,6 +5,7 @@ import { Customer } from '../models/customer.entity';
 import { CreateCustomerDto, UpdateCustomerDto, LoginDto, ChangePasswordDto } from '../dto/customer.dto';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
+import { Response } from 'express';
 
 @Injectable()
 export class CustomerService {
@@ -62,15 +63,50 @@ export class CustomerService {
     return this.customerRepository.save(customer);
   }
 
-  async deleteCustomer(id: number, password: string): Promise<void> {
-    const customer = await this.getCustomerById(id);
-    const isPasswordValid = await bcrypt.compare(password, customer.customer_Password);
-    
-    if (!isPasswordValid) {
-      throw new UnauthorizedException('Incorrect password');
+  async deleteCustomer(id: number, password: string, response: Response): Promise<void> {
+    if (!password || typeof password !== 'string') {
+      throw new BadRequestException('Password is required');
     }
 
-    await this.customerRepository.remove(customer);
+    const customer = await this.customerRepository.findOne({
+      where: { customer_ID: id },
+      select: ['customer_ID', 'customer_Password', 'customer_Email'] 
+    });
+
+    if (!customer) {
+      throw new NotFoundException('Customer not found');
+    }
+
+    try {
+      const isPasswordValid = await bcrypt.compare(password, customer.customer_Password);
+      
+      if (!isPasswordValid) {
+        throw new UnauthorizedException('Incorrect password');
+      }
+
+      // Delete addresses and clear cookie
+      await this.customerRepository.manager.transaction(async transactionalEntityManager => {
+        await transactionalEntityManager.query(
+          'DELETE FROM address WHERE customer_ID = ?',
+          [id]
+        );
+
+        // Clear the authentication cookie
+        response.clearCookie('authToken', {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          path: '/'
+        });
+      });
+
+    } catch (error) {
+      console.error('Error deleting customer addresses:', error);
+      if (error instanceof UnauthorizedException) {
+        throw error;
+      }
+      throw new BadRequestException('Failed to delete customer addresses');
+    }
   }
 
   async changePassword(id: number, data: ChangePasswordDto): Promise<boolean> {
