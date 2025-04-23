@@ -1,98 +1,185 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# saraetkarim API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Project Setup:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Install Dependencies
+~~~bash
+npm install 
+~~~
 
-## Description
+## Run The Application
+- Make the necessary changes to the .env file
+~~~txt
+# .env
+JWT_SECRET=jwtSecretKeyForDevNotThatComplex
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
+# MySQL Database Configuration
+DB_HOST=<db_ip>
+DB_USER=<db_user>
+DB_PASSWORD=<password_db>
+DB_NAME=<db_name>
+DB_PORT=3306
 
-```bash
-$ npm install
-```
+# Server Configuration
+PORT=3000
+~~~
+- Then run the application:
 
 ## Compile and run the project
 
-```bash
+~~~bash
 # development
-$ npm run start
+ npm run start
 
 # watch mode
-$ npm run start:dev
+ npm run start:dev
 
 # production mode
-$ npm run start:prod
-```
+npm run start:prod
+~~~
 
-## Run tests
 
-```bash
-# unit tests
-$ npm run test
+# Docker Installation:
+- Using Docker Compose, we can run two containers: one for MySQL and the other for the API (Node.js/Express). This option will ensure the project's portability.
+~~~bash
+docker-compose up --build
+~~~
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
+# Postman:
+- You can find the Postman collection exported JSON file in the repository. The filename is: saraetkarim_API.postman_collection.json.
 
-## Deployment
+# Database
+## ER Diagram:
+![image](https://github.com/user-attachments/assets/cbbe6c63-c793-468b-976b-819b7806f6f9)
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## Schema:
+~~~sql
+-- mydb.category definition
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+CREATE TABLE `category` (
+  `category_ID` int NOT NULL AUTO_INCREMENT,
+  `category_Name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`category_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
-## Resources
+-- mydb.customer definition
 
-Check out a few resources that may come in handy when working with NestJS:
+CREATE TABLE `customer` (
+  `customer_ID` int NOT NULL AUTO_INCREMENT,
+  `customer_FullName` varchar(140) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `customer_Email` varchar(100) DEFAULT NULL,
+  `customer_Password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `customer_PhoneNumber` varchar(8) DEFAULT NULL,
+  `role` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`customer_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-## Support
+-- mydb.address definition
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+CREATE TABLE `address` (
+  `address_ID` int NOT NULL AUTO_INCREMENT,
+  `region` varchar(45) DEFAULT NULL,
+  `street` varchar(45) DEFAULT NULL,
+  `building` varchar(45) DEFAULT NULL,
+  `floor` int DEFAULT '0',
+  `moreDetails` varchar(45) DEFAULT NULL,
+  `customer_ID` int DEFAULT NULL,
+  PRIMARY KEY (`address_ID`),
+  KEY `customer_ID` (`customer_ID`),
+  CONSTRAINT `address_ibfk_1` FOREIGN KEY (`customer_ID`) REFERENCES `customer` (`customer_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+-- mydb.product definition
 
-## License
+CREATE TABLE `product` (
+  `product_ID` int NOT NULL AUTO_INCREMENT,
+  `product_IMG` varchar(45) DEFAULT NULL,
+  `product_Name` varchar(45) DEFAULT NULL,
+  `product_Description` mediumtext,
+  `product_Info` mediumtext,
+  `product_Price` decimal(10,2) DEFAULT NULL,
+  `category_ID` int DEFAULT NULL,
+  `stock_quantity` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_ID`),
+  KEY `category_ID` (`category_ID`),
+  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_ID`) REFERENCES `category` (`category_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+-- mydb.reviews definition
+
+CREATE TABLE `reviews` (
+  `review_ID` int NOT NULL AUTO_INCREMENT,
+  `customer_ID` int DEFAULT NULL,
+  `product_ID` int DEFAULT NULL,
+  `rating` int DEFAULT NULL,
+  `review_Text` mediumtext,
+  PRIMARY KEY (`review_ID`),
+  KEY `customer_ID` (`customer_ID`),
+  KEY `product_ID` (`product_ID`),
+  CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`customer_ID`) REFERENCES `customer` (`customer_ID`),
+  CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`product_ID`) REFERENCES `product` (`product_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- mydb.cart definition
+
+CREATE TABLE `cart` (
+  `cart_ID` int NOT NULL AUTO_INCREMENT,
+  `customer_ID` int DEFAULT NULL,
+  `product_ID` int DEFAULT NULL,
+  `quantity` int DEFAULT '1',
+  `status` enum('active','checked_out') DEFAULT 'active',
+  PRIMARY KEY (`cart_ID`),
+  KEY `customer_ID` (`customer_ID`),
+  KEY `product_ID` (`product_ID`),
+  CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`customer_ID`) REFERENCES `customer` (`customer_ID`),
+  CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_ID`) REFERENCES `product` (`product_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- mydb.customization definition
+
+CREATE TABLE `customization` (
+  `customization_ID` int NOT NULL AUTO_INCREMENT,
+  `customization_Size` int DEFAULT NULL,
+  `customization_Color` varchar(45) DEFAULT NULL,
+  `product_ID` int DEFAULT NULL,
+  PRIMARY KEY (`customization_ID`),
+  KEY `product_ID` (`product_ID`),
+  CONSTRAINT `customization_ibfk_1` FOREIGN KEY (`product_ID`) REFERENCES `product` (`product_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- mydb.orders definition
+
+CREATE TABLE `orders` (
+  `order_ID` int NOT NULL AUTO_INCREMENT,
+  `cart_ID` int DEFAULT NULL,
+  PRIMARY KEY (`order_ID`),
+  KEY `cart_ID` (`cart_ID`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`cart_ID`) REFERENCES `cart` (`cart_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- mydb.shipment definition
+
+CREATE TABLE `shipment` (
+  `shipment_ID` int NOT NULL AUTO_INCREMENT,
+  `order_ID` int DEFAULT NULL,
+  `customer_ID` int DEFAULT NULL,
+  PRIMARY KEY (`shipment_ID`),
+  KEY `order_ID` (`order_ID`),
+  KEY `customer_ID` (`customer_ID`),
+  CONSTRAINT `shipment_ibfk_1` FOREIGN KEY (`order_ID`) REFERENCES `orders` (`order_ID`),
+  CONSTRAINT `shipment_ibfk_2` FOREIGN KEY (`customer_ID`) REFERENCES `customer` (`customer_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+~~~
+
+
