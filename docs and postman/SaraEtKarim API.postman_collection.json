@@ -17,13 +17,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImVtYWlsIjoibmV3dXNlckBnb29nbGUuY29tIiwicm9sZSI6MSwiaWF0IjoxNzMzNjc1MDMxLCJleHAiOjE3MzM2Nzg2MzF9.-_LTSwVDUlI0f8XovqZqiZAkloKNkP7nzhct_uhuyqg",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiYWRtaW5AZ29vZ2xlLmNvbSIsInJvbGUiOjAsImlhdCI6MTc0NTI3MzYzNSwiZXhwIjoxNzQ1Mjc3MjM1fQ.5yCJjN0XcZ9WHT1rhiZrmaVftlNAJx3O85DT7zJtXSw",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "Cookie",
-								"value": "authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiYWRtaW5AZ29vZ2xlLmNvbSIsInJvbGUiOjAsImlhdCI6MTczMzU3NTkyOSwiZXhwIjoxNzMzNTc5NTI5fQ.TJZtXiO-HQihiTxR_Hqd9DdLpG-lhXR6WNdnJhvOYCU",
+								"value": "authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiYWRtaW5AZ29vZ2xlLmNvbSIsInJvbGUiOjAsImlhdCI6MTc0NTI3MzYzNSwiZXhwIjoxNzQ1Mjc3MjM1fQ.5yCJjN0XcZ9WHT1rhiZrmaVftlNAJx3O85DT7zJtXSw",
 								"type": "text"
 							}
 						],
@@ -55,7 +55,8 @@
 							{
 								"key": "Cookie",
 								"value": "authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiYWRtaW5AZ29vZ2xlLmNvbSIsInJvbGUiOjAsImlhdCI6MTczMzU3NTkyOSwiZXhwIjoxNzMzNTc5NTI5fQ.TJZtXiO-HQihiTxR_Hqd9DdLpG-lhXR6WNdnJhvOYCU",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -115,7 +116,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"newuser@google.com\",\r\n    \"old_password\": \"pAssword123\",\r\n    \"new_password\": \"pAssword124\"\r\n}",
+							"raw": "{\r\n    \"email\": \"mass2@google.com\",\r\n    \"old_password\": \"pAssword123\",\r\n    \"new_password\": \"pAssword124\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -151,7 +152,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/customers/3",
+							"raw": "http://{{URL}}/api/customers/29",
 							"protocol": "http",
 							"host": [
 								"{{URL}}"
@@ -159,7 +160,7 @@
 							"path": [
 								"api",
 								"customers",
-								"3"
+								"29"
 							]
 						}
 					},
@@ -178,7 +179,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Updated Test User\",\r\n    \"email\": \"newemail@example.com\",\r\n    \"number\": \"77777787\"\r\n}",
+							"raw": "{\r\n    \"name\": \"mass2\",\r\n    \"email\": \"mass2@google.com\",\r\n    \"number\": \"77777787\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -281,30 +282,6 @@
 								"api",
 								"customers",
 								"admin"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoicHJvZmlsZTFAZ29vZ2xlLmNvbSIsInJvbGUiOjEsImlhdCI6MTczMzUyMzU4MywiZXhwIjoxNzMzNTI3MTgzfQ.aQ0In2hOjzBNEgl9GUBr-dYtW3eMbcO4ILDcJcV8G8g",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://{{URL}}/profile",
-							"protocol": "http",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"profile"
 							]
 						}
 					},
@@ -514,7 +491,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_IMG\": \"/images/product-7.jpg\",\r\n    \"product_Name\": \"Product 7\",\r\n    \"product_Description\": \"This is a sample description for the product.\",\r\n    \"product_Info\": \"Additional information about the sample product.\",\r\n    \"product_Price\": 20.99,\r\n    \"category_ID\": 12,\r\n    \"stock_quantity\": 4\r\n}\r\n",
+									"raw": "{\r\n    \"product_IMG\": \"/images/product-8.jpg\",\r\n    \"product_Name\": \"Product 8\",\r\n    \"product_Description\": \"This is a sample description for the product.\",\r\n    \"product_Info\": \"Additional information about the sample product.\",\r\n    \"product_Price\": 30.99,\r\n    \"category_ID\": 11,\r\n    \"stock_quantity\": 10\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1282,7 +1259,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"product_ID\": 20,\r\n    \"quantity\": 2\r\n}",
+							"raw": "{\r\n    \"product_ID\": 18,\r\n    \"quantity\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
