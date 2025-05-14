@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "410dab16-e9d9-4070-917d-47cf17d7e4a0",
+		"_postman_id": "73650f6f-8aaa-443b-b81f-04e7bd76239a",
 		"name": "SaraEtKarim API",
 		"description": "You can find the Postman API documentation for all API endpoints here.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -28,11 +28,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/customers",
+							"raw": "http://82.25.119.19:3333/api/customers",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers"
@@ -60,11 +64,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/customers/check/auth",
+							"raw": "http://82.25.119.19:3333/api/customers/check/auth",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -90,11 +98,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/customers",
+							"raw": "http://82.25.119.19:3333/api/customers",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers"
@@ -124,11 +136,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/customers/{{customer_id}}/change/password",
+							"raw": "http://82.25.119.19:3333/api/customers/{{customer_id}}/change/password",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -152,11 +168,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/customers/29",
+							"raw": "http://82.25.119.19:3333/api/customers/29",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -187,11 +207,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/customers/{{customer_id}}",
+							"raw": "http://82.25.119.19:3333/api/customers/{{customer_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -216,10 +240,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/api/customers/{{customer_id}}",
+							"raw": "http://82.25.119.19:3333/api/customers/{{customer_id}}",
+							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -244,11 +273,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/customers/signin",
+							"raw": "http://82.25.119.19:3333/api/customers/signin",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -273,11 +306,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/customers/admin",
+							"raw": "http://82.25.119.19:3333/api/customers/admin",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customers",
@@ -307,11 +344,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/address",
+									"raw": "http://82.25.119.19:3333/api/address",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"address"
@@ -334,15 +375,19 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/address/{{address_id}}",
+							"raw": "http://82.25.119.19:3333/api/address/15",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"address",
-								"{{address_id}}"
+								"15"
 							]
 						}
 					},
@@ -360,11 +405,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/address/customer/{{customer_id}}",
+							"raw": "http://82.25.119.19:3333/api/address/customer/{{customer_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"address",
@@ -396,11 +445,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/address",
+							"raw": "http://82.25.119.19:3333/api/address",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"address"
@@ -430,11 +483,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/address/{{address_id}}",
+							"raw": "http://82.25.119.19:3333/api/address/{{address_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"address",
@@ -456,11 +513,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/address/{{address_id}}",
+							"raw": "http://82.25.119.19:3333/api/address/{{address_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"address",
@@ -499,11 +560,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/products",
+									"raw": "http://82.25.119.19:3333/api/products",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"products"
@@ -533,11 +598,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/products/11",
+									"raw": "http://82.25.119.19:3333/api/products/11",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"products",
@@ -559,11 +628,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/products/{{product_id}}",
+									"raw": "http://82.25.119.19:3333/api/products/{{product_id}}",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"products",
@@ -587,11 +660,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/products",
+							"raw": "http://82.25.119.19:3333/api/products",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"products"
@@ -612,11 +689,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/products/{{product_id}}",
+							"raw": "http://82.25.119.19:3333/api/products/{{product_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"products",
@@ -638,11 +719,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/products/category/{{category_id}}",
+							"raw": "http://82.25.119.19:3333/api/products/category/{{category_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"products",
@@ -682,11 +767,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/categories",
+									"raw": "http://82.25.119.19:3333/api/categories",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"categories"
@@ -716,11 +805,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/categories/{{category_id}}",
+									"raw": "http://82.25.119.19:3333/api/categories/{{category_id}}",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"categories",
@@ -751,11 +844,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/categories/{{category_id}}",
+									"raw": "http://82.25.119.19:3333/api/categories/{{category_id}}",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"categories",
@@ -779,11 +876,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/categories",
+							"raw": "http://82.25.119.19:3333/api/categories",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"categories"
@@ -804,11 +905,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/categories/{{category_id}}",
+							"raw": "http://82.25.119.19:3333/api/categories/{{category_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"categories",
@@ -838,11 +943,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/reviews",
+									"raw": "http://82.25.119.19:3333/api/reviews",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"reviews"
@@ -865,11 +974,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/reviews/{{review_id}}",
+							"raw": "http://82.25.119.19:3333/api/reviews/{{review_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"reviews",
@@ -891,11 +1004,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/reviews/customer/{{customer_id}}",
+							"raw": "http://82.25.119.19:3333/api/reviews/customer/{{customer_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"reviews",
@@ -918,11 +1035,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/reviews/product/{{product_id}}",
+							"raw": "http://82.25.119.19:3333/api/reviews/product/{{product_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"reviews",
@@ -954,11 +1075,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/reviews",
+							"raw": "http://82.25.119.19:3333/api/reviews",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"reviews"
@@ -988,11 +1113,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/reviews/{{product_id}}",
+							"raw": "http://82.25.119.19:3333/api/reviews/{{product_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"reviews",
@@ -1014,11 +1143,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/reviews/{{product_id}}",
+							"raw": "http://82.25.119.19:3333/api/reviews/{{product_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"reviews",
@@ -1057,11 +1190,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/customizations",
+									"raw": "http://82.25.119.19:3333/api/customizations",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"customizations"
@@ -1091,11 +1228,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/customizations/{{customization_id}}",
+									"raw": "http://82.25.119.19:3333/api/customizations/{{customization_id}}",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"customizations",
@@ -1117,11 +1258,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/customizations/{{customization_id}}",
+									"raw": "http://82.25.119.19:3333/api/customizations/{{customization_id}}",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"customizations",
@@ -1145,11 +1290,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/customizations",
+							"raw": "http://82.25.119.19:3333/api/customizations",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customizations"
@@ -1170,11 +1319,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/customizations/1",
+							"raw": "http://82.25.119.19:3333/api/customizations/1",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"customizations",
@@ -1204,11 +1357,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/cart",
+									"raw": "http://82.25.119.19:3333/api/cart",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"cart"
@@ -1231,11 +1388,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/cart/customer/{{customer_id}}",
+							"raw": "http://82.25.119.19:3333/api/cart/customer/{{customer_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"cart",
@@ -1267,11 +1428,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/cart",
+							"raw": "http://82.25.119.19:3333/api/cart",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"cart"
@@ -1301,11 +1466,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/cart/{{cart_id}}",
+							"raw": "http://82.25.119.19:3333/api/cart/{{cart_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"cart",
@@ -1327,11 +1496,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/cart/total",
+							"raw": "http://82.25.119.19:3333/api/cart/total",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"cart",
@@ -1353,11 +1526,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/cart/{{cart_id}}",
+							"raw": "http://82.25.119.19:3333/api/cart/{{cart_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"cart",
@@ -1387,11 +1564,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/orders",
+									"raw": "http://82.25.119.19:3333/api/orders",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"orders"
@@ -1414,11 +1595,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/orders/{{order_id}}?customer_id=15",
+							"raw": "http://82.25.119.19:3333/api/orders/{{order_id}}?customer_id=15",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"orders",
@@ -1455,11 +1640,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{URL}}/api/orders",
+							"raw": "http://82.25.119.19:3333/api/orders",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"orders"
@@ -1480,11 +1669,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/orders/{{order_id}}",
+							"raw": "http://82.25.119.19:3333/api/orders/{{order_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"orders",
@@ -1514,11 +1707,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/shipments",
+									"raw": "http://82.25.119.19:3333/api/shipments",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"shipments"
@@ -1548,11 +1745,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{URL}}/api/shipments",
+									"raw": "http://82.25.119.19:3333/api/shipments",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"shipments"
@@ -1573,11 +1774,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{URL}}/api/shipments/{{shipment_id}}",
+									"raw": "http://82.25.119.19:3333/api/shipments/{{shipment_id}}",
 									"protocol": "http",
 									"host": [
-										"{{URL}}"
+										"82",
+										"25",
+										"119",
+										"19"
 									],
+									"port": "3333",
 									"path": [
 										"api",
 										"shipments",
@@ -1601,11 +1806,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{URL}}/api/shipments/{{shipment_id}}",
+							"raw": "http://82.25.119.19:3333/api/shipments/{{shipment_id}}",
 							"protocol": "http",
 							"host": [
-								"{{URL}}"
+								"82",
+								"25",
+								"119",
+								"19"
 							],
+							"port": "3333",
 							"path": [
 								"api",
 								"shipments",
