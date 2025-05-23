@@ -17,6 +17,18 @@ export class CustomizationService {
     });
   }
 
+  async getCustomizationsByProductId(productId: number): Promise<Customization[]> {
+    const customizations = await this.customizationRepository.find({
+      where: { product_ID: productId },
+      relations: ['product'],
+    });
+
+    if (!customizations.length) {
+      throw new NotFoundException('No customizations found for this product');
+    }
+    return customizations;
+  }
+
   async getCustomizationById(id: number): Promise<Customization> {
     const customization = await this.customizationRepository.findOne({
       where: { customization_ID: id },

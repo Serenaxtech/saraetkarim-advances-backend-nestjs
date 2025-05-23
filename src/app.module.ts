@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { CustomerModule } from './modules/customer.module';
 import { AddressModule } from './modules/address.module';
 import { ReviewModule } from './modules/review.module';
@@ -19,6 +21,13 @@ import { AuthModule } from './auth/auth.module';
       isGlobal: true,
       load: [databaseConfig],
     }),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: 'schema.gql',
+      sortSchema: true,
+      playground: true,
+      context: ({ req, res }) => ({ req, res }),
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
@@ -29,7 +38,7 @@ import { AuthModule } from './auth/auth.module';
         password: configService.get('database.password'),
         database: configService.get('database.database'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: false, // Set this to false initially
+        synchronize: false,
         autoLoadEntities: true,
       }),
       inject: [ConfigService],

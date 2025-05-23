@@ -1,0 +1,193 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AddressType {
+  address_ID: ID!
+  building: String!
+  customer: CustomerType!
+  customer_ID: Int!
+  floor: Int!
+  moreDetails: String!
+  region: String!
+  street: String!
+}
+
+type AuthType {
+  message: String
+  success: Boolean!
+  token: String!
+}
+
+type CartType {
+  cart_ID: ID!
+  customer_ID: Int!
+  product: ProductType
+  product_ID: Int!
+  quantity: Int!
+  status: String!
+}
+
+input ChangePasswordInput {
+  email: String!
+  new_password: String!
+  old_password: String!
+}
+
+input CreateAddressInput {
+  building: String!
+  floor: Int!
+  moreDetails: String
+  region: String!
+  street: String!
+}
+
+input CreateCartInput {
+  product_ID: Int!
+  quantity: Int!
+}
+
+input CreateCustomerInput {
+  email: String!
+  name: String!
+  number: String!
+  password: String!
+}
+
+input CreateOrderInput {
+  cart_ID: Int!
+}
+
+input CreateProductInput {
+  category_ID: Int!
+  product_Description: String!
+  product_IMG: String!
+  product_Info: String!
+  product_Name: String!
+  product_Price: Float!
+  stock_quantity: Int!
+}
+
+input CreateReviewInput {
+  product_ID: Int!
+  rating: Int!
+  review_Text: String!
+}
+
+type CustomerType {
+  customer_Email: String!
+  customer_FullName: String!
+  customer_ID: ID!
+  customer_PhoneNumber: String!
+  role: Int!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  addToCart(input: CreateCartInput!): CartType!
+  changePassword(id: Int!, input: ChangePasswordInput!): Boolean!
+  createAddress(input: CreateAddressInput!): AddressType!
+  createAdmin(input: CreateCustomerInput!): CustomerType!
+  createCustomer(input: CreateCustomerInput!): CustomerType!
+  createOrder(input: CreateOrderInput!): OrderType!
+  createProduct(input: CreateProductInput!): ProductType!
+  createReview(input: CreateReviewInput!): ReviewType!
+  deleteAddress(id: Int!): Boolean!
+  deleteCustomer(id: Int!, password: String!): Boolean!
+  deleteOrder(id: Int!): Boolean!
+  deleteProduct(id: Int!): Boolean!
+  deleteReview(id: Int!): Boolean!
+  login(input: LoginInput!): AuthType!
+  removeFromCart(id: Int!): Boolean!
+  updateAddress(id: Int!, input: UpdateAddressInput!): AddressType!
+  updateCartItem(id: Int!, input: UpdateCartInput!): CartType!
+  updateCustomer(id: Int!, input: UpdateCustomerInput!): CustomerType!
+  updateProduct(id: Int!, input: UpdateProductInput!): ProductType!
+  updateReview(id: Int!, input: UpdateReviewInput!): ReviewType!
+}
+
+type OrderType {
+  cart: CartType!
+  cart_ID: Int!
+  order_ID: ID!
+}
+
+type ProductType {
+  category_ID: Int!
+  product_Description: String!
+  product_ID: ID!
+  product_IMG: String!
+  product_Info: String!
+  product_Name: String!
+  product_Price: Float!
+  stock_quantity: Int!
+}
+
+type Query {
+  address(id: Int!): AddressType!
+  addresses: [AddressType!]!
+  cart(id: Int!): CartType!
+  cartTotal: Float!
+  carts: [CartType!]!
+  customer(id: Int!): CustomerType!
+  customerCart: [CartType!]!
+  customerReviews(customerId: Int!): [ReviewType!]!
+  customers: [CustomerType!]!
+  order(id: Int!): OrderType!
+  orders: [OrderType!]!
+  product(id: Int!): ProductType!
+  productReviews(productId: Int!): [ReviewType!]!
+  products: [ProductType!]!
+  productsByCategory(categoryId: Int!): [ProductType!]!
+  productsInStock: [ProductType!]!
+  review(id: Int!): ReviewType!
+  reviews: [ReviewType!]!
+}
+
+type ReviewType {
+  customer: CustomerType!
+  customer_ID: Int!
+  product: ProductType!
+  product_ID: Int!
+  rating: Int!
+  review_ID: ID!
+  review_Text: String!
+}
+
+input UpdateAddressInput {
+  building: String!
+  floor: Int!
+  moreDetails: String
+  region: String!
+  street: String!
+}
+
+input UpdateCartInput {
+  quantity: Int!
+}
+
+input UpdateCustomerInput {
+  email: String!
+  name: String!
+  number: String!
+}
+
+input UpdateProductInput {
+  category_ID: Int!
+  product_Description: String!
+  product_IMG: String!
+  product_Info: String!
+  product_Name: String!
+  product_Price: Float!
+  stock_quantity: Int!
+}
+
+input UpdateReviewInput {
+  product_ID: Int!
+  rating: Int!
+  review_Text: String!
+}

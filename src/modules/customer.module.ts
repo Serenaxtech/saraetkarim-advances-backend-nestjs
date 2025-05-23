@@ -5,6 +5,7 @@ import { CustomerService } from '../services/customer.service';
 import { Customer } from '../models/customer.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
+import { CustomerResolver } from '../graphql/resolvers/customer.resolver';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { ConfigService } from '@nestjs/config';
     }),
   ],
   controllers: [CustomerController],
-  providers: [CustomerService],
+  providers: [CustomerService, CustomerResolver],
   exports: [CustomerService],
 })
 export class CustomerModule {}

@@ -130,15 +130,20 @@ export class CustomerService {
   }
 
   async signIn(loginData: LoginDto): Promise<{ token: string }> {
+    console.log('Login attempt with:',  { email: loginData.email, password: !!loginData.password });
+    console.log(loginData);
     const customer = await this.customerRepository.findOne({
       where: { customer_Email: loginData.email },
     });
+    console.log('Found customer:', !!customer);
 
     if (!customer) {
       throw new UnauthorizedException('Invalid credentials');
     }
 
+    console.log('Customer password exists:', !!customer.customer_Password);
     const isPasswordValid = await bcrypt.compare(loginData.password, customer.customer_Password);
+    console.log(customer.customer_Password);
     if (!isPasswordValid) {
       throw new UnauthorizedException('Invalid credentials');
     }

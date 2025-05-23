@@ -5,11 +5,12 @@ import { OrderService } from '../services/order.service';
 import { Order } from '../models/orders.entity';
 import { Cart } from '../models/cart.entity';
 import { Product } from '../models/product.entity';
+import { OrderResolver } from '../graphql/resolvers/order.resolver';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Order, Cart, Product])],
   controllers: [OrderController],
-  providers: [OrderService],
+  providers: [OrderService, OrderResolver],
   exports: [OrderService],
 })
 export class OrderModule {}

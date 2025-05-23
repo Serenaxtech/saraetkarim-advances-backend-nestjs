@@ -50,6 +50,9 @@ docker-compose up --build
 # Postman:
 - You can find the Postman collection exported JSON file in the repository. The filename is: saraetkarim_API.postman_collection.json.
 
+# GraphQL:
+[[Click here]](./src/graphql/README.md)
+
 # Database
 ## ER Diagram:
 ![image](https://github.com/user-attachments/assets/cbbe6c63-c793-468b-976b-819b7806f6f9)
