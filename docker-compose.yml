@@ -4,17 +4,17 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_ROOT_PASSWORD: emL5CxRPr5NEbHpLg5LuduUGpak4NH
       MYSQL_DATABASE: mydb
       MYSQL_USER: mydbuser
-      MYSQL_PASSWORD: mydbpassword
+      MYSQL_PASSWORD: JE8qMYp8Fe2ku8DcMR5fJxGxfBsGv2
     volumes:
       - db_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "--password=toor"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "--password=emL5CxRPr5NEbHpLg5LuduUGpak4NH"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -26,14 +26,14 @@ services:
     environment:
       DB_HOST: db
       DB_USER: mydbuser
-      DB_PASSWORD: mydbpassword
+      DB_PASSWORD: JE8qMYp8Fe2ku8DcMR5fJxGxfBsGv2
       DB_NAME: mydb
       DB_PORT: 3306
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - "3000:3000"
+      - "3333:3000"
     depends_on:
       db:
         condition: service_healthy
